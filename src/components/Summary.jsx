@@ -17,7 +17,7 @@ const Summary = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
+            <tr className="hover">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
@@ -39,7 +39,7 @@ const Summary = () => {
               <th>Rp. 200.000</th>
             </tr>
             {/* row 2 */}
-            <tr>
+            <tr className="hover">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">

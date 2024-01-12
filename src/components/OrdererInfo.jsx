@@ -1,7 +1,7 @@
 const OrdererInfo = () => {
   return (
-    <>
-      <h3 className="mt-12 font-bold text-xl">Informasi Pemesan</h3>
+    <div className="space-y-4">
+      <h3 className="mt-12 font-medium text-3xl">Informasi Pemesan</h3>
       <div className="mb-12 md:flex gap-4">
         <label className="form-control w-full">
           <div className="label">
@@ -34,7 +34,7 @@ const OrdererInfo = () => {
           />
         </label>
       </div>
-    </>
+    </div>
   );
 };
 
