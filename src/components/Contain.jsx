@@ -1,6 +1,7 @@
 import Card from "./Card";
 import OrdererInfo from "./OrdererInfo";
 import Summary from "./Summary";
+import data_product from "../assets/data";
 
 const Contain = () => {
   return (
@@ -16,9 +17,13 @@ const Contain = () => {
       <div className="flex flex-col gap-4 my-16">
         <h3 className="font-medium text-3xl">List Foto</h3>
         <div className="flex flex-row flex-wrap justify-center gap-8">
-          <Card />
-          <Card />
-          <Card />
+          {data_product.map(data => {
+            return (
+              <div key={data.id}>
+                <Card data={data}/>
+              </div>
+            )
+          })}
         </div>
       </div>
 

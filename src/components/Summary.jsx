@@ -3,7 +3,7 @@ import React from "react";
 const Summary = () => {
   return (
     <div className="my-12">
-      <h3 className="font-bold text-xl mb-4">Review Pesanan</h3>
+      <h3 className="font-medium text-3xl mb-4">Review Pesanan</h3>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
