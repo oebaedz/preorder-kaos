@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-const Card = ({ data }) => {
+const Card = ({ data, setTotalItem }) => {
   const [item, setItem] = useState(0);
 
   const handleAddCart = (e) => {
     e.preventDefault();
     setItem(item + 1);
+    setTotalItem((prevState) => prevState + 1)
   };
 
   return (
     <div className="indicator">
-      <div className="card w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
+      <div className="card w-80 sm:w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
         <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
             <img src={data.image} alt={data.name} className="rounded-md max-h-full" />
