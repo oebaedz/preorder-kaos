@@ -13,7 +13,7 @@ const Card = ({ data }) => {
       <div className="card w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
         <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
-            <img src={data.image} alt={data.name} className="rounded-md w-full max-h-full" />
+            <img src={data.image} alt={data.name} className="rounded-md max-h-full" />
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">

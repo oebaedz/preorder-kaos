@@ -2,8 +2,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="md:px-28">
-      <div className="navbar bg-base-100">
+    <div className="flex-no-wrap fixed top-0 flex w-full items-center justify-between bg-[#FBFBFB] shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4 md:px-28 z-10">
+      <div className="navbar">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">IKSADA</a>
         </div>
