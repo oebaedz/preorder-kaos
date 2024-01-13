@@ -10,20 +10,21 @@ const Card = ({ data }) => {
 
   return (
     <div className="indicator">
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <div className="h-80 flex items-center justify-center">
+      <div className="card w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
+        <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
-            <img src={data.image} alt={data.name} className="rounded-xl max-h-full" />
+            <img src={data.image} alt={data.name} className="rounded-md w-full max-h-full" />
           </figure>
         </div>
-        <div className="card-body flex flex-row justify-between">
-          <div>
-            <h2 className="card-title">{data.name}</h2>
-            <p>{data.desc}</p>
-            <p>{data.subt}</p>
-            <p className="font-medium text-xl mt-2">Rp {data.price}</p>
+        <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
+          <div className="h-28">
+            <h2 className="card-title text-sm mb-1 md:mb-3">{data.name}</h2>
+            <p className="text-sm">{data.desc}</p>
+            <p className="text-sm">{data.subt}</p>
+            <p className="font-medium mt-2">Rp {Number(data.price).toLocaleString()}</p>
           </div>
-          <div className="card-actions">
+          <div className="card-actions flex bg-accent rounded-lg items-center md:items-start md:bg-base-300">
+            <p className="px-3 md:hidden">add</p>
             <button className="btn btn-accent" onClick={handleAddCart}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
