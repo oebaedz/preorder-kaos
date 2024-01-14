@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useCart } from "react-use-cart";
 
 const Card = ({ data, setTotalItem }) => {
   const [item, setItem] = useState(0);
+  const {addItem} = useCart()
 
   const handleAddCart = (e) => {
     e.preventDefault();
     setItem(item + 1);
     setTotalItem((prevState) => prevState + 1)
+
+    addItem(data)
+    console.log(data)
   };
 
   return (
     <div className="indicator">
-      <div className="card w-80 sm:w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
+      <div className="card w-72 sm:w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
         <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
             <img src={data.image} alt={data.name} className="rounded-md max-h-full" />
@@ -26,7 +31,7 @@ const Card = ({ data, setTotalItem }) => {
           </div>
           <div className="card-actions flex bg-accent rounded-lg items-center md:items-start md:bg-base-300">
             <p className="px-3 md:hidden">add</p>
-            <button className="btn btn-accent" onClick={handleAddCart}>
+            <button className="btn btn-accent" onClick={() => addItem(data)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
