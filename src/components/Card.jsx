@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../StoreContext";
 
-const Card = ({ data, setTotalItem }) => {
-  const [item, setItem] = useState(0);
-  const {items, addToCart} = useContext(StoreContext)
+const Card = ({ data }) => {
+  const { items, addToCart } = useContext(StoreContext);
 
+  const current = items.find(prod => prod.id === data.id)
+  
   const handleAddCart = () => {
-
-    addToCart(data)
-    console.log(items)
+    addToCart(data);
   };
 
   return (
@@ -16,7 +15,11 @@ const Card = ({ data, setTotalItem }) => {
       <div className="card w-72 sm:w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
         <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
-            <img src={data.image} alt={data.name} className="rounded-md max-h-full" />
+            <img
+              src={data.image}
+              alt={data.name}
+              className="rounded-md max-h-full"
+            />
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
@@ -24,11 +27,13 @@ const Card = ({ data, setTotalItem }) => {
             <h2 className="card-title text-sm mb-1 md:mb-3">{data.name}</h2>
             <p className="text-sm">{data.desc}</p>
             <p className="text-sm">{data.subt}</p>
-            <p className="font-medium mt-2">Rp {Number(data.price).toLocaleString()}</p>
+            <p className="font-medium mt-2">
+              Rp {Number(data.price).toLocaleString()}
+            </p>
           </div>
-          <div className="card-actions flex bg-accent rounded-lg items-center md:items-start md:bg-base-300">
-            <p className="px-3 md:hidden">add</p>
-            <button className="btn btn-accent" onClick={handleAddCart}>
+          <div className="card-actions flex rounded-lg">
+            <button className="btn btn-accent w-full" onClick={handleAddCart}>
+            <p className="px-3 md:hidden">Tambahkan</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -47,9 +52,9 @@ const Card = ({ data, setTotalItem }) => {
           </div>
         </div>
       </div>
-      {item ? (
+      {current ? (
         <span className="badge badge-accent badge-lg indicator-item">
-          {item}
+          {current.qty}
         </span>
       ) : (
         ""

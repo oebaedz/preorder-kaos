@@ -9,8 +9,7 @@ const Hero = () => {
             Pre Order Foto Masyayikh
           </h1>
           <p className="py-6 md:text-xl font-light md:mr-44">
-            Yo, ngireng se messenah foto-foto pengasuh kita
-            <span>di PP Darul Lughah Wal Karomah</span>
+            Yo, ngireng se messenah foto-foto pengasuh kita <span>di PP Darul Lughah Wal Karomah</span>
           </p>
           <button className="btn btn-accent hidden md:block">
             Daftar Foto

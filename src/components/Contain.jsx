@@ -1,10 +1,22 @@
+import data_product from "../assets/data";
 import Card from "./Card";
 import OrdererInfo from "./OrdererInfo";
 import Summary from "./Summary";
-import data_product from "../assets/data";
 import Hero from "./Hero";
+import { useContext } from "react";
+import { StoreContext } from "../StoreContext";
 
-const Contain = ({ setTotalItem }) => {
+const Contain = () => {
+  const { items } = useContext(StoreContext);
+
+  const handleSubmit = () => {
+    if (!items.length) {
+      alert('Pilih produk dulu!')
+    } else {
+      console.log(items)
+    }
+  }
+
   return (
     <div className="px-6 md:px-[138px] bg-slate-50">
       <Hero />
@@ -15,7 +27,7 @@ const Contain = ({ setTotalItem }) => {
           {data_product.map((data) => {
             return (
               <div key={data.id}>
-                <Card setTotalItem={setTotalItem} data={data} />
+                <Card data={data} />
               </div>
             );
           })}
@@ -23,12 +35,21 @@ const Contain = ({ setTotalItem }) => {
       </div>
 
       <OrdererInfo />
-      <div className="my-12">
-        <h3 className="font-medium text-3xl mb-4">Review Pesanan</h3>
-        <Summary />
-      </div>
+      {items.length ? (
+        <div className="my-12">
+          <h3 className="font-medium text-3xl mb-4">Review Pesanan</h3>
+          <Summary />
+        </div>
+      ) : (
+        <div className="my-12">
+          <h3 className="font-medium text-3xl mb-4">Review Pesanan</h3>
+          <p className="italic">Silahkan pilih salah satu produk terlebih dahulu</p>
+        </div>
+      )}
 
-      <button className="btn btn-accent w-32 mb-20">Pesan</button>
+      <button type="submit" onClick={handleSubmit} className="btn btn-accent w-32 mb-20">
+        Pesan
+      </button>
     </div>
   );
 };

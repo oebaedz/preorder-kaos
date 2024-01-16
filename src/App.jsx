@@ -5,18 +5,26 @@ import { useState } from "react";
 import { StoreContext } from "./StoreContext";
 
 function App() {
-  const [totalItem, setTotalItem] = useState(0);
   const [items, setItems] = useState([]);
 
   const addToCart = (data) => {
-    setItems((prevState) => [...prevState,  data ]);
+    const existing = items.find(item => item.id === data.id)
+    if (existing) {
+      setItems(items.map(item => 
+        item.id === data.id 
+        ? {...existing, qty: existing.qty + 1}
+        : item ))
+    } else {
+      setItems((prevState) => [...prevState, {...data, qty: 1}]);
+    }
   };
+
 
   return (
     <div>
-      <StoreContext.Provider value={{items, addToCart}}>
-        <Navbar totalItem={totalItem} />
-        <Contain setTotalItem={setTotalItem} />
+      <StoreContext.Provider value={{items, setItems, addToCart}} >
+        <Navbar />
+        <Contain />
         <Footer />
       </StoreContext.Provider>
     </div>
