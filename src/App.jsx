@@ -2,20 +2,24 @@ import Contain from "./components/Contain";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { useState } from "react";
-import { useCart } from "react-use-cart";
+import { StoreContext } from "./StoreContext";
 
 function App() {
   const [totalItem, setTotalItem] = useState(0);
-  const {CartProvider} = useCart();
+  const [items, setItems] = useState([]);
+
+  const addToCart = (data) => {
+    setItems((prevState) => [...prevState,  data ]);
+  };
 
   return (
-    <>
-      {/* <CartProvider> */}
+    <div>
+      <StoreContext.Provider value={{items, addToCart}}>
         <Navbar totalItem={totalItem} />
         <Contain setTotalItem={setTotalItem} />
         <Footer />
-      {/* </CartProvider> */}
-    </>
+      </StoreContext.Provider>
+    </div>
   );
 }
 

@@ -1,17 +1,14 @@
-import { useState } from "react";
-import { useCart } from "react-use-cart";
+import { useContext, useState } from "react";
+import { StoreContext } from "../StoreContext";
 
 const Card = ({ data, setTotalItem }) => {
   const [item, setItem] = useState(0);
-  const {addItem} = useCart()
+  const {items, addToCart} = useContext(StoreContext)
 
-  const handleAddCart = (e) => {
-    e.preventDefault();
-    setItem(item + 1);
-    setTotalItem((prevState) => prevState + 1)
+  const handleAddCart = () => {
 
-    addItem(data)
-    console.log(data)
+    addToCart(data)
+    console.log(items)
   };
 
   return (
@@ -31,7 +28,7 @@ const Card = ({ data, setTotalItem }) => {
           </div>
           <div className="card-actions flex bg-accent rounded-lg items-center md:items-start md:bg-base-300">
             <p className="px-3 md:hidden">add</p>
-            <button className="btn btn-accent" onClick={() => addItem(data)}>
+            <button className="btn btn-accent" onClick={handleAddCart}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
