@@ -6,10 +6,7 @@ import { StoreContext } from "./StoreContext";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [nama, setNama] = useState("");
-  const [noHP, setNoHP] = useState("");
-  const [alamat, setAlamat] = useState("");
-
+  
   const addToCart = (data) => {
     const existing = items.find((item) => item.id === data.id);
     if (existing) {
@@ -23,23 +20,15 @@ function App() {
     }
   };
 
-  const value={
+  const value = {
     items,
     setItems,
     addToCart,
-    nama,
-    setNama,
-    noHP,
-    setNoHP,
-    alamat,
-    setAlamat,
-  }
+  };
 
   return (
     <div>
-      <StoreContext.Provider
-        value={value}
-      >
+      <StoreContext.Provider value={value}>
         <Navbar />
         <Contain />
         <Footer />
