@@ -65,7 +65,7 @@ let data_product = [
     image: p4_img,
     desc: "Foto + pigura",
     subt: "Ukuran 35 x 25 cm",
-    price: 100000,
+    price: 60000,
   },
   {
     id: 8,
