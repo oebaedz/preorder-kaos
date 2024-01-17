@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../StoreContext";
 
-const Card = ({ data }) => {
+const Card = ({ product }) => {
   const { items, addToCart } = useContext(StoreContext);
 
-  const current = items.find(prod => prod.id === data.id)
+  const current = items.find(prod => prod.id === product.id)
   
   const handleAddCart = () => {
-    addToCart(data);
+    addToCart(product);
   };
 
   return (
@@ -16,19 +16,19 @@ const Card = ({ data }) => {
         <div className="h-40 md:h-80 flex items-center justify-center">
           <figure className="px-3 pt-3 h-full">
             <img
-              src={data.image}
-              alt={data.name}
+              src={product.image}
+              alt={product.name}
               className="rounded-md max-h-full"
             />
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
           <div className="h-28">
-            <h2 className="card-title text-sm mb-1 md:mb-3">{data.name}</h2>
-            <p className="text-sm">{data.desc}</p>
-            <p className="text-sm">{data.subt}</p>
+            <h2 className="card-title text-sm mb-1 md:mb-3">{product.name}</h2>
+            <p className="text-sm">{product.desc}</p>
+            <p className="text-sm">{product.subt}</p>
             <p className="font-medium mt-2">
-              Rp {Number(data.price).toLocaleString()}
+              Rp {Number(product.price).toLocaleString()}
             </p>
           </div>
           <div className="card-actions flex rounded-lg">

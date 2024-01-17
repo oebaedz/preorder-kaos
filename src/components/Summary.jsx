@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
-import TableRow from "./tableRow";
+import TableRow from "./TableRow";
 
 const Summary = ({ cart }) => {
   const { items } = useContext(StoreContext);
