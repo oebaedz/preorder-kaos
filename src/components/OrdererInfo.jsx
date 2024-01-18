@@ -58,10 +58,12 @@ const OrdererInfo = () => {
     }
   };
 
+  // submit joss
+
   const Warning = () => {
     return (
       <div className="my-12">
-        <h3 className="font-bold text-3xl mb-4">Warning</h3>
+        <h3 className="font-bold text-3xl mb-4">Perhatian</h3>
         <p className="italic">
           Untuk bisa masuk dalam <b>List Preorder</b>, diharuskan untuk membayar{" "}
           <b>DP minimal 50% </b>
@@ -72,7 +74,9 @@ const OrdererInfo = () => {
         <p className="italic font-bold md:text-xl">0582-0102-0919-50-4</p>
         <p className="italic pt-2">Konfirmasi pembayaran via</p>
         <p className="italic font-bold text-green-800">
-          <a target="blank" href="https://wa.me/6282228326870">WhatsApp</a>
+          <a target="blank" href="https://wa.me/6282228326870">
+            WhatsApp
+          </a>
         </p>
       </div>
     );
@@ -157,9 +161,9 @@ const OrdererInfo = () => {
           </label>
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text text-lg font-medium">
+              <p className="label-text text-lg font-medium">
                 No. HP / WhatsApp
-              </span>
+              </p>
             </div>
             <input
               type="text"
@@ -169,6 +173,9 @@ const OrdererInfo = () => {
               value={noHP}
               name="noHP"
             />
+            <p className="italic font-light text-sm ml-1 pt-2">
+              No. HP diawali dengan angka 62
+            </p>
           </label>
           <label className="form-control w-full ">
             <div className="label">
