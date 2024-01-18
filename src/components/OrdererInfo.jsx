@@ -174,7 +174,7 @@ const OrdererInfo = () => {
               value={noHP}
               name="noHP"
             />
-            <p className="italic font-light text-sm ml-1 pt-2">
+            <p className="font-light text-sm ml-1 pt-2">
               No. HP diawali dengan angka 62
             </p>
           </label>
