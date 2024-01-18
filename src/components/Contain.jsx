@@ -3,17 +3,18 @@ import Card from "./Card";
 import OrdererInfo from "./OrdererInfo";
 import Summary from "./Summary";
 import Hero from "./Hero";
-import { useContext, useState } from "react";
+import { useContext, useRef } from "react";
 import { StoreContext } from "../StoreContext";
 
 const Contain = () => {
-  const { items } = useContext(StoreContext);
+  const { items, checkoutRef, listRef } = useContext(StoreContext);
+  const listSect = useRef(null)
 
   return (
     <div className="px-6 md:px-[138px] bg-slate-50">
       <Hero />
 
-      <section id="list" className="flex flex-col gap-4 my-10">
+      <section ref={listRef} className="flex flex-col gap-4 my-10">
         <h3 className="font-medium text-3xl mb-6">Daftar Foto</h3>
         <div className="flex flex-row flex-wrap justify-center gap-2 md:gap-8">
           {data_product.map((product) => {
@@ -26,7 +27,7 @@ const Contain = () => {
         </div>
       </section>
 
-      <section id="checkout">
+      <section ref={checkoutRef} >
         {items.length ? (
           <>
             <div className="my-12">

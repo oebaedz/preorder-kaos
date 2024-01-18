@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../StoreContext";
+import { Link } from "react-router-dom";
 
 const OrdererInfo = () => {
   const { items, setItems } = useContext(StoreContext);
@@ -74,9 +75,9 @@ const OrdererInfo = () => {
         <p className="italic font-bold md:text-xl">0582-0102-0919-50-4</p>
         <p className="italic pt-2">Konfirmasi pembayaran via</p>
         <p className="italic font-bold text-green-800">
-          <a target="blank" href="https://wa.me/6282228326870">
+          <Link target="blank" to="https://wa.me/6282228326870">
             WhatsApp
-          </a>
+          </Link>
         </p>
       </div>
     );

@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
 import hero from "../assets/catalog.jpg";
+import { useContext } from "react";
+import { StoreContext } from "../StoreContext";
 
 const Hero = () => {
+  const {scrollList} = useContext(StoreContext)
+
   return (
     <div className="hero min-h-screen bg-base-200 px-4">
       <div className="hero-content flex-col lg:flex-row">
@@ -12,7 +17,7 @@ const Hero = () => {
             Yo, ngireng se messenah foto-foto pengasuh kita <span>di PP Darul Lughah Wal Karomah</span>
           </p>
           <button className="btn btn-accent hidden md:block">
-            <a href="#list">Daftar Foto</a>
+            <Link onClick={scrollList} >Daftar Foto</Link>
           </button>
         </div>
         <img

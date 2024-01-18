@@ -1,11 +1,27 @@
 import Contain from "./components/Contain";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { StoreContext } from "./StoreContext";
 
 function App() {
   const [items, setItems] = useState([]);
+  const checkoutRef = useRef(null)
+  const listRef = useRef(null)
+
+  const scrollCheckout = () => {
+    window.scrollTo({
+      top: checkoutRef.current.offsetTop - 110,
+      behavior: "smooth"
+    })
+  }
+
+  const scrollList = () => {
+    window.scrollTo({
+      top: listRef.current.offsetTop - 110,
+      behavior: "smooth"
+    })
+  }
   
   const addToCart = (data) => {
     const existing = items.find((item) => item.id === data.id);
@@ -24,6 +40,10 @@ function App() {
     items,
     setItems,
     addToCart,
+    checkoutRef,
+    scrollCheckout,
+    listRef,
+    scrollList
   };
 
   return (

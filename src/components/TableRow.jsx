@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
 import edit from "../assets/edit.png";
+import { Link } from "react-router-dom";
 
 const TableRow = ({ item, cart }) => {
-  const { items, setItems } = useContext(StoreContext);
+  const { items, setItems, scrollCheckout } = useContext(StoreContext);
 
   const increaseItem = () => {
     const currentItem = items.find((prod) => prod.id === item.id);
@@ -75,7 +76,7 @@ const TableRow = ({ item, cart }) => {
         <div className="space-y-2">
           <div>
             <button
-              className="px-2 mr-2 bg-gray-400 border rounded hover:bg-slate-100 hover:border-black"
+              className="px-2 mr-2 bg-gray-400 border border-slate-100 rounded hover:bg-slate-100 hover:border-gray-900"
               onClick={decreaseItem}
             >
               -
@@ -89,7 +90,7 @@ const TableRow = ({ item, cart }) => {
             </button>
           </div>
           <button
-            className="bg-gray-500 font-medium text-white px-4 hover:bg-red-700 py-2 rounded-md"
+            className="md:bg-gray-500 font-medium bg-red-800 text-white px-4 hover:bg-red-700 py-2 rounded-md"
             onClick={handleDelete}
           >
             Hapus
@@ -102,9 +103,15 @@ const TableRow = ({ item, cart }) => {
         <div className="flex flex-col items-end gap-2">
           <p>{Number(item.qty * item.price).toLocaleString()}</p>
           <p>
-            <a href="#checkout">
-              <img className={`${cart ? '' : 'hidden'}`} width={20} height={20} src={edit} alt="edit" />
-            </a>
+            <Link onClick={scrollCheckout} >
+              <img
+                className={`${cart ? "" : "hidden"}`}
+                width={20}
+                height={20}
+                src={edit}
+                alt="edit"
+              />
+            </Link>
           </p>
         </div>
       </th>

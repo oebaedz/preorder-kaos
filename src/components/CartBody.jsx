@@ -1,11 +1,13 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { StoreContext } from "../StoreContext";
 import Summary from "./Summary";
 import empty from "../assets/empty-cart.png";
 
 const CartBody = () => {
+  const { items, scrollCheckout } = useContext(StoreContext);
+  
   const cart = true;
-  const { items } = useContext(StoreContext);
   const totItems = items.reduce((qty, item) => qty + item.qty,0)
 
   return !items.length ? (
@@ -23,7 +25,7 @@ const CartBody = () => {
       <Summary cart={cart} />
       <div className="flex justify-center">
         <button className="btn btn-accent w-full">
-          <a href="#checkout">Check Out</a>
+          <Link to='/' onClick={scrollCheckout}>Check Out</Link>
         </button>
       </div>
     </div>
