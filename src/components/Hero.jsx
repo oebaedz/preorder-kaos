@@ -12,7 +12,7 @@ const Hero = () => {
             Yo, ngireng se messenah foto-foto pengasuh kita <span>di PP Darul Lughah Wal Karomah</span>
           </p>
           <button className="btn btn-accent hidden md:block">
-            Daftar Foto
+            <a href="#list">Daftar Foto</a>
           </button>
         </div>
         <img

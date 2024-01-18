@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
+import edit from "../assets/edit.png";
 
 const TableRow = ({ item, cart }) => {
   const { items, setItems } = useContext(StoreContext);
@@ -31,7 +32,7 @@ const TableRow = ({ item, cart }) => {
   };
 
   const handleDelete = () => {
-      setItems(items.filter((prod) => prod.id !== item.id));
+    setItems(items.filter((prod) => prod.id !== item.id));
   };
 
   return (
@@ -54,8 +55,10 @@ const TableRow = ({ item, cart }) => {
           </div>
           <div>
             <div className="font-medium text-sm ">{item.name}</div>
-            <div className={`${cart ? "hidden" : "hidden md:block"}`}>{item.subt}</div>
-            <div className={`md:hidden ${cart ? 'block' : ''}`}>
+            <div className={`${cart ? "hidden" : "hidden md:block"}`}>
+              {item.subt}
+            </div>
+            <div className={`md:hidden ${cart ? "block" : ""}`}>
               {item.qty} x {Number(item.price).toLocaleString()}
             </div>
           </div>
@@ -85,13 +88,25 @@ const TableRow = ({ item, cart }) => {
               +
             </button>
           </div>
-          <button className="bg-gray-500 font-medium text-white px-4 hover:bg-red-700 py-2 rounded-md" onClick={handleDelete}>Hapus</button>
+          <button
+            className="bg-gray-500 font-medium text-white px-4 hover:bg-red-700 py-2 rounded-md"
+            onClick={handleDelete}
+          >
+            Hapus
+          </button>
         </div>
       </td>
 
       {/* col 4 */}
       <th className="align-text-top text-right">
-        {Number(item.qty * item.price).toLocaleString()}
+        <div className="flex flex-col items-end gap-2">
+          <p>{Number(item.qty * item.price).toLocaleString()}</p>
+          <p>
+            <a href="#checkout">
+              <img className={`${cart ? '' : 'hidden'}`} width={20} height={20} src={edit} alt="edit" />
+            </a>
+          </p>
+        </div>
       </th>
     </tr>
   );

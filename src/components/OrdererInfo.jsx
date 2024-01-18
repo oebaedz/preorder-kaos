@@ -13,7 +13,8 @@ const OrdererInfo = () => {
 
   const total = items.reduce((price, item) => price + item.qty * item.price, 0);
   const diorder = items.reduce(
-    (name, item) => name + item.name + " : " + item.qty + " x " + item.price + ', ',
+    (name, item) =>
+      name + item.name + " : " + item.qty + " x " + item.price + ", ",
     0
   );
 
@@ -42,16 +43,16 @@ const OrdererInfo = () => {
       setTimeout(() => {
         setSucc(false);
       }, 10000);
-      
+
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        console.log(response)
-        setLoading(false);
-        setSucc(true);
-        setNama("");
-        setNoHP("");
-        setAlamat("");
-        setItems([]);
+        .then((response) => {
+          console.log(response);
+          setLoading(false);
+          setSucc(true);
+          setNama("");
+          setNoHP("");
+          setAlamat("");
+          setItems([]);
         })
         .catch((error) => console.error("Error", error.message));
     }
@@ -62,12 +63,17 @@ const OrdererInfo = () => {
       <div className="my-12">
         <h3 className="font-bold text-3xl mb-4">Warning</h3>
         <p className="italic">
-          Untuk bisa masuk dalam <b>List Preorder</b>, diharuskan untuk membayar <b>DP minimal 50% </b> 
+          Untuk bisa masuk dalam <b>List Preorder</b>, diharuskan untuk membayar{" "}
+          <b>DP minimal 50% </b>
           dari total harga.
         </p>
         <p className="italic">DP bisa ditransfer ke No Rekening BRI a/n:</p>
-        <p className="italic font-bold text-xl">A. JAMIL HIDAYATULLAH</p>
-        <p className="italic font-bold text-xl">0582-0102-0919-50-4</p>
+        <p className="italic font-bold md:text-xl">A. JAMIL HIDAYATULLAH</p>
+        <p className="italic font-bold md:text-xl">0582-0102-0919-50-4</p>
+        <p className="italic pt-2">Konfirmasi pembayaran via</p>
+        <p className="italic font-bold text-green-800">
+          <a target="blank" href="https://wa.me/6282228326870">WhatsApp</a>
+        </p>
       </div>
     );
   };
@@ -205,7 +211,7 @@ const OrdererInfo = () => {
               Loading...
             </>
           ) : (
-            <p>Gasss</p>
+            <p className="font-medium md:text-lg">Kirim</p>
           )}
         </button>
       </form>

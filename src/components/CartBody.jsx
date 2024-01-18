@@ -17,9 +17,15 @@ const CartBody = () => {
     </div>
   ) : (
     <div>
-      <p className="font-bold text-sm text-center pb-2">{totItems} barang dalam keranjang Anda</p>
+      <p className="font-bold text-lg text-center pt-3">Keranjang Anda</p>
+      <p className="font-light text-sm text-center pb-2">{totItems} barang ditambahkan</p>
       <hr />
       <Summary cart={cart} />
+      <div className="flex justify-center">
+        <button className="btn btn-accent w-full">
+          <a href="#checkout">Check Out</a>
+        </button>
+      </div>
     </div>
   );
 };

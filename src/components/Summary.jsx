@@ -25,7 +25,7 @@ const Summary = ({ cart }) => {
         </tbody>
       </table>
       <hr />
-      <div className="flex flex-row justify-between w-full font-medium text-sm md:text-lg p-4 text-black">
+      <div className="flex flex-row justify-between w-full font-medium text-sm md:text-lg p-4 text-gray-800">
         <div>Total Harga</div>
         <div>Rp {Number(total).toLocaleString()}</div>
       </div>
