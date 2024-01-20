@@ -11,7 +11,7 @@ function App() {
 
   const scrollCheckout = () => {
     window.scrollTo({
-      top: checkoutRef.current.offsetTop - 109,
+      top: checkoutRef.current.offsetTop - 100,
       behavior: "smooth"
     })
   }
