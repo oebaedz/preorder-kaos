@@ -16,8 +16,8 @@ const Hero = () => {
           <p className="py-6 md:text-xl font-light md:mr-44">
             Yo, ngireng se messenah foto-foto pengasuh kita <span>di PP Darul Lughah Wal Karomah</span>
           </p>
-          <button className="btn btn-accent hidden md:block">
-            <Link onClick={scrollList} >Daftar Foto</Link>
+          <button className="btn btn-accent hidden md:block" onClick={scrollList} >
+            <Link>Daftar Foto</Link>
           </button>
         </div>
         <img

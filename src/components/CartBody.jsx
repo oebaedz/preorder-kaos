@@ -24,8 +24,8 @@ const CartBody = () => {
       <hr />
       <Summary cart={cart} />
       <div className="flex justify-center">
-        <button className="btn btn-accent w-full">
-          <Link to='/' onClick={scrollCheckout}>Check Out</Link>
+        <button onClick={scrollCheckout} className="btn btn-accent w-full">
+          <Link to='/'>Check Out</Link>
         </button>
       </div>
     </div>
