@@ -29,21 +29,21 @@ const OrdererInfo = () => {
     e.preventDefault();
     if (!nama || !noHP || !alamat) {
       setWarn(true);
-      setAlert("Lengkapi data Anda terlebih dahulu!");
+      setAlert("Lengkapi data Anda!");
       setTimeout(() => {
         setWarn(false);
-      }, 3000);
+      }, 10000);
     } else if (!items.length) {
       setWarn(true);
-      setAlert("Pilih produk terlebih dahulu!");
+      setAlert("Pilih produk dulu!");
       setTimeout(() => {
         setWarn(false);
-      }, 3000);
+      }, 10000);
     } else {
       setLoading(true);
       setTimeout(() => {
         setSucc(false);
-      }, 10000);
+      }, 20000);
 
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
         .then((response) => {
@@ -85,7 +85,7 @@ const OrdererInfo = () => {
 
   const SuccessAlert = () => {
     return (
-      <div role="alert" className="alert alert-success">
+      <div role="alert" className="alert alert-success mb-10 flex flex-row items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="stroke-current shrink-0 h-6 w-6"
@@ -100,14 +100,15 @@ const OrdererInfo = () => {
           />
         </svg>
         <div>
-          <p>Selamat!</p>
-          <p>Anda berhasil masuk dalam daftar Pre Order.</p>
+          <p>Selamat! Pesanan Anda terkirim.</p>
+          <p>Jangan lupa DP 50% atau bayar lunas.</p>
         </div>
         <button
           onClick={() => setSucc(false)}
-          className="bg-black text-success font-bold px-2 rounded-full align-middle"
         >
-          X
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30">
+            <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"></path>
+          </svg>
         </button>
       </div>
     );
@@ -115,7 +116,7 @@ const OrdererInfo = () => {
 
   const WarnAlert = ({ alert }) => {
     return (
-      <div role="alert" className="alert alert-warning">
+      <div role="alert" className="alert alert-warning mb-10 flex flex-row justify-between">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="stroke-current shrink-0 h-6 w-6"
@@ -132,9 +133,10 @@ const OrdererInfo = () => {
         <span>{alert}</span>
         <button
           onClick={() => setWarn(false)}
-          className="bg-black text-warning font-bold px-2 rounded-full align-middle"
         >
-          X
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30">
+            <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"></path>
+          </svg>
         </button>
       </div>
     );
@@ -143,8 +145,6 @@ const OrdererInfo = () => {
   return (
     <div className="space-y-4">
       <h3 className="mt-12 font-medium text-3xl">Informasi Pemesan</h3>
-      {warn && <WarnAlert alert={alert} />}
-      {succ && <SuccessAlert />}
       <form name="preorder-form">
         <div className="mb-12 md:flex gap-4">
           <label className="form-control w-full">
@@ -207,6 +207,8 @@ const OrdererInfo = () => {
           />
         </div>
         {items.length ? <Warning /> : ""}
+        {warn && <WarnAlert alert={alert} />}
+        {succ && <SuccessAlert />}
         <button
           type="submit"
           className="btn btn-accent w-32 mb-20"
