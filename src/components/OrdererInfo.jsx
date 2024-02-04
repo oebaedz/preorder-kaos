@@ -15,7 +15,7 @@ const OrdererInfo = () => {
   const total = items.reduce((price, item) => price + item.qty * item.price, 0);
   const diorder = items.reduce(
     (name, item) =>
-      name + item.name + " : " + item.qty + " x " + item.price + ", ",
+      name + item.name + " : " + item.qty + " x " + item.price + ",",
     0
   );
 
