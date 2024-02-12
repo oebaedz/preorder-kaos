@@ -32,24 +32,24 @@ const OrdererInfo = () => {
       setAlert("Lengkapi data Anda!");
       setTimeout(() => {
         setWarn(false);
-      }, 10000);
+      }, 7000);
     } else if (!items.length) {
       setWarn(true);
       setAlert("Pilih produk dulu!");
       setTimeout(() => {
         setWarn(false);
-      }, 10000);
+      }, 7000);
     } else {
       setLoading(true);
-      setTimeout(() => {
-        setSucc(false);
-      }, 20000);
 
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
         .then((response) => {
           console.log(response);
           setLoading(false);
           setSucc(true);
+          setTimeout(() => {
+            setSucc(false);
+          }, 10000);
           setNama("");
           setNoHP("");
           setAlamat("");
