@@ -1,13 +1,19 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../StoreContext";
+import Alert from "./Alert";
 
 const Card = ({ product }) => {
   const { items, addToCart } = useContext(StoreContext);
+  const [alert, setAlert] = useState(false)
 
   const current = items.find(prod => prod.id === product.id)
   
   const handleAddCart = () => {
     addToCart(product);
+    setAlert(true)
+    setTimeout(() => {
+      setAlert(false)
+    }, 5000);
   };
 
   return (
@@ -59,6 +65,8 @@ const Card = ({ product }) => {
       ) : (
         ""
       )}
+
+      {alert && <Alert/>}
     </div>
   );
 };
