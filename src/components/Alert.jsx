@@ -32,9 +32,9 @@ const Alert = () => {
       </div>
       <div className="block md:hidden">
         <div className="flex w-full gap-8 px-6 mb-3 py-3 border rounded-2xl bg-cyan-100 items-center">
-          <h3 className="font-medium">Lihat Keranjang?</h3>
-          <button onClick={scrollCheckout} className="btn btn-accent btn-sm">
-            Gass
+          <h3 className="font-medium">Lanjut check out?</h3>
+          <button onClick={scrollCheckout} className="btn px-5 btn-accent btn-sm">
+            Ya
           </button>
         </div>
       </div>

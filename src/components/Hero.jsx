@@ -13,6 +13,9 @@ const Hero = () => {
           <h1 className="text-xl md:text-5xl font-medium">
             Pre Order Foto Masyayikh
           </h1>
+          <h1 className="text-md md:text-2xl mt-2 font-medium">
+            Chapter II | 01-30 April 2024
+          </h1>
           <p className="py-6 md:text-xl font-light md:mr-44">
             Nyara, ngireng se messenah foto-foto pengasuh kita <span>di PP Darul Lughah Wal Karomah</span>
           </p>
