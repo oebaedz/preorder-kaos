@@ -23,10 +23,10 @@ const Alert = () => {
           </svg>
           <div>
             <h3 className="font-bold">Produk ditambahkan!</h3>
-            <div className="text-sm">Lihat keranjang?</div>
+            <div className="text-sm">Lanjut Check Out?</div>
           </div>
-          <button onClick={scrollCheckout} className="btn btn-accent btn-sm">
-            Gas
+          <button onClick={scrollCheckout} className="btn px-5 btn-accent btn-sm">
+            Ya
           </button>
         </div>
       </div>

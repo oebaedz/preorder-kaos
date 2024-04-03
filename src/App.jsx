@@ -1,13 +1,20 @@
 import Contain from "./components/Contain";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StoreContext } from "./StoreContext";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const itemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || '[]'
+
+  const [items, setItems] = useState(itemsFromLocalStorage);
   const checkoutRef = useRef(null)
   const listRef = useRef(null)
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(items))
+  }, [items])
+  
 
   const scrollCheckout = () => {
     window.scrollTo({
