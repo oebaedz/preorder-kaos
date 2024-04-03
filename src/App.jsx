@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { StoreContext } from "./StoreContext";
 
 function App() {
-  const itemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || '[]'
+  const itemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || []
 
   const [items, setItems] = useState(itemsFromLocalStorage);
   const checkoutRef = useRef(null)
