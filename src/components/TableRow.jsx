@@ -102,7 +102,7 @@ const TableRow = ({ item, cart }) => {
       <th className="align-text-top text-right">
         <div className="flex flex-col items-end gap-2">
           <p>{Number(item.qty * item.price).toLocaleString()}</p>
-          {/* <p className="h-7 w-7 rounded-full bg-white flex items-center justify-center">
+          <p className={`${cart ? "" : "hidden"} h-7 w-7 rounded-full bg-white flex items-center justify-center`}>
             <Link onClick={scrollCheckout} >
               <img
                 className={`${cart ? "" : "hidden"}`}
@@ -112,7 +112,7 @@ const TableRow = ({ item, cart }) => {
                 alt="edit"
               />
             </Link>
-          </p> */}
+          </p>
         </div>
       </th>
     </tr>
