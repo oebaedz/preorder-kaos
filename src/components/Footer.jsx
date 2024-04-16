@@ -8,7 +8,7 @@ const Footer = () => {
           <img src={logo} alt='logo' />
         </div>
       </div>
-      <p>Created by <a className='hover:text-red-500' href="https://instagram.com/oebaedz">Zbad</a>, IKSADA Creative Team</p>
+      <p>Created by <a className='hover:text-red-500 font-medium' href="https://instagram.com/oebaedz">Zbad</a>, IKSADA Creative Team</p>
       <p>© 2024. All Rights Reserved</p>
     </footer>
   );

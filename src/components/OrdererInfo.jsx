@@ -16,7 +16,7 @@ const OrdererInfo = () => {
   const diorder = items.reduce(
     (name, item) =>
       name + item.name + " : " + item.qty + " x " + item.price + ",",
-    0
+    ""
   );
 
   // trying submit
@@ -66,18 +66,17 @@ const OrdererInfo = () => {
       <div className="my-12">
         <h3 className="font-bold text-3xl mb-4">Perhatian</h3>
         <p className="italic">
-          Untuk bisa masuk dalam <b>List Preorder</b>, diharuskan untuk membayar{" "}
-          <b>DP minimal 50% </b>
-          dari total harga.
+          Dianggap masuk <b>LIST ORDER</b>, jika membayar{" "}
+          <b>LUNAS.</b>
         </p>
-        <p className="italic">DP bisa ditransfer ke No Rekening BRI a/n:</p>
+        <p className="italic">Pembayaran bisa ditransfer ke No Rekening BRI a/n:</p>
         <p className="italic font-bold md:text-xl">A. JAMIL HIDAYATULLAH</p>
         <p className="italic font-bold md:text-xl">0582-0102-0919-50-4</p>
-        <p className="italic pt-2">Konfirmasi pembayaran via</p>
-        <p className="italic font-bold text-green-800">
+        <p className="italic pt-2">Konfirmasi pembayaran via <span className="italic font-bold text-green-800">
           <Link target="blank" to="https://wa.me/6282228326870">
             WhatsApp
           </Link>
+        </span>
         </p>
       </div>
     );

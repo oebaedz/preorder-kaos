@@ -14,8 +14,8 @@ const Contain = () => {
     <div className="px-6 md:px-[138px] bg-slate-50">
       <Hero />
 
-      <section ref={listRef} className="flex flex-col gap-4 my-10">
-        <h3 className="font-medium text-3xl mb-6">Daftar Foto</h3>
+      <section ref={listRef} className="flex flex-col gap-4 my-10 pt-12">
+        <h3 className="font-medium text-3xl mb-6">Daftar Produk</h3>
         <div className="flex flex-row flex-wrap justify-center gap-2 md:gap-8">
           {data_product.map((product) => {
             return (
