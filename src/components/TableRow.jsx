@@ -76,14 +76,14 @@ const TableRow = ({ item, cart }) => {
         <div className="space-y-2">
           <div>
             <button
-              className="px-2 mr-2 bg-gray-400 border border-slate-100 rounded hover:bg-slate-100 hover:border-gray-900"
+              className="px-2 mr-2 bg-base-400 border border-slate-500 rounded hover:bg-slate-200 hover:border-gray-900"
               onClick={decreaseItem}
             >
               -
             </button>
             {item.qty}
             <button
-              className="px-2 ml-2 bg-gray-400 border rounded hover:bg-slate-100 hover:border-black"
+              className="px-2 ml-2 bg-base-400 border border-slate-500 rounded hover:bg-slate-200 hover:border-gray-900"
               onClick={increaseItem}
             >
               +

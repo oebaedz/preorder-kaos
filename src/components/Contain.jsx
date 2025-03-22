@@ -11,7 +11,7 @@ const Contain = () => {
   const listSect = useRef(null)
 
   return (
-    <div className="px-6 md:px-[138px] bg-slate-50">
+    <div className="px-6 md:px-[138px] bg-base-200">
       <Hero />
 
       <section ref={listRef} className="flex flex-col gap-4 my-10 pt-12">

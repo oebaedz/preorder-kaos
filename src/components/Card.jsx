@@ -18,14 +18,15 @@ const Card = ({ product }) => {
 
   return (
     <div className="indicator">
-      <div className="card w-72 sm:w-44 mb-2 md:w-80 bg-base-300 shadow-xl">
+      <div className="card w-72 sm:w-44 mb-2 md:w-80 bg-base-100 shadow-xl">
         <div className="h-40 md:h-80 flex items-center justify-center">
-          <figure className="px-3 pt-3 h-full">
+          <figure className="relative px-3 pt-3 h-full">
             <img
               src={product.image}
               alt={product.name}
               className="rounded-md max-h-full"
             />
+            <p className="absolute text-3xl font-bold text-black left-5 bottom-2">S</p>
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
