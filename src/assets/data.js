@@ -1,5 +1,5 @@
-import p1_img from "./pendek.png";
-import p2_img from "./panjang.png";
+import p1_img from "./pendek.jpg";
+import p2_img from "./panjang.jpg";
 
 
 let data_product = [

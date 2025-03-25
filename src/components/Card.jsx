@@ -26,7 +26,7 @@ const Card = ({ product }) => {
               alt={product.name}
               className="rounded-md h-full contain"
             />
-            <p className="absolute text-xl font-bold text-black left-5 bottom-2">{product.size}</p>
+            <p className="absolute text-xs sm:text-xl text-xl font-bold text-black left-5 bottom-2">{product.size}</p>
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
