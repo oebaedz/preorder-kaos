@@ -19,7 +19,7 @@ const Hero = () => {
               Open Pre Order
             </h1>
             <h1 className="text-md md:text-2xl mt-2 font-medium">
-              Kaos Edisi Spesial Reuni Akbar dan Halal Bihalal ke-9
+              Kaos Edisi Spesial Reuni Akbar dan Halal Bihalal ke-10
             </h1>
             <p className="py-6 md:text-xl font-light md:mr-44">
               Ikatan Santri dan Alumni  <span>PP Darul Lughah Wal Karomah</span>

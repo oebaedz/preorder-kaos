@@ -18,15 +18,15 @@ const Card = ({ product }) => {
 
   return (
     <div className="indicator">
-      <div className="card w-72 sm:w-44 mb-2 md:w-80 bg-base-100 shadow-xl">
-        <div className="h-40 md:h-80 flex items-center justify-center">
+      <div className="card w-44 sm:w-52 mb-2 md:w-72 bg-base-100 shadow-xl">
+        <div className="h-44 md:h-72 flex items-center justify-center">
           <figure className="relative px-3 pt-3 h-full">
             <img
               src={product.image}
               alt={product.name}
-              className="rounded-md max-h-full"
+              className="rounded-md h-full contain"
             />
-            <p className="absolute text-3xl font-bold text-black left-5 bottom-2">S</p>
+            <p className="absolute text-xl font-bold text-black left-5 bottom-2">{product.size}</p>
           </figure>
         </div>
         <div className="card-body p-4 text-sm md:text-lg flex flex-col md:flex-row justify-between">
@@ -40,7 +40,7 @@ const Card = ({ product }) => {
           </div>
           <div className="card-actions flex rounded-lg">
             <button className="btn btn-accent w-full" onClick={handleAddCart}>
-            <p className="px-3 md:hidden">Tambahkan</p>
+            <p className="px-3 md:hidden">Beli</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

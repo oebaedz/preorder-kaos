@@ -17,7 +17,7 @@ const Navbar = () => {
             onClick={() => window.scrollTo(0, 0)}
           >
             <img src={logo} alt="logo" className="w-6 h-6" />
-            Halal Bihalal
+            Halal Bihalal 10
           </Link>
         </div>
         <div className="flex-none">
