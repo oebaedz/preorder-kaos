@@ -93,24 +93,6 @@ let data_product = [
     subt: "Panjang 78 cm",
     price: 75000,
   },
-  {
-    id: 7,
-    name: "Lengan Pendek 3XL",
-    size: "3XL",
-    image: p1_img,
-    desc: "Lebar 66 cm",
-    subt: "Panjang 80 cm",
-    price: 75000,
-  },
-  {
-    id: 14,
-    name: "Lengan Panjang 3XL",
-    size: "3XL",
-    image: p2_img,
-    desc: "Lebar 66 cm",
-    subt: "Panjang 80 cm",
-    price: 80000,
-  },
 ];
 
 export default data_product;
