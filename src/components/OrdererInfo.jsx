@@ -49,7 +49,7 @@ const OrdererInfo = () => {
           setSucc(true);
           setTimeout(() => {
             setSucc(false);
-          }, 10000);
+          }, 30000);
           setNama("");
           setNoHP("");
           setAlamat("");
@@ -100,7 +100,7 @@ const OrdererInfo = () => {
         </svg>
         <div>
           <p>Selamat! Pesanan Anda terkirim.</p>
-          <p>Jangan lupa DP 50% atau bayar lunas.</p>
+          <p>Jangan lupa bayar LUNAS, agar masuk <b>LIST ORDER</b>.</p>
         </div>
         <button
           onClick={() => setSucc(false)}
