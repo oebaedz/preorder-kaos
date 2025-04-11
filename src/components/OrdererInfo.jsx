@@ -235,6 +235,7 @@ const OrdererInfo = () => {
           className="btn btn-accent w-32 mb-20"
           onClick={handleSubmit}
           name="submit"
+          disabled={loading}
         >
           {loading ? (
             <>
