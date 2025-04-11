@@ -26,7 +26,7 @@ const Contain = () => {
         <div className="flex gap-4 mb-6">
           <button
             className={`px-4 py-2 rounded-lg font-semibold ${
-              activeCategory === "umum" ? "bg-accent" : "bg-gray-200"
+              activeCategory === "umum" ? "bg-accent text-black" : "bg-gray-200"
             }`}
             onClick={() => setActiveCategory("umum")}
           >
@@ -34,7 +34,7 @@ const Contain = () => {
           </button>
           <button
             className={`px-4 py-2 rounded-lg font-semibold ${
-              activeCategory === "anak" ? "bg-accent" : "bg-gray-200"
+              activeCategory === "anak" ? "bg-accent text-black" : "bg-gray-200"
             }`}
             onClick={() => setActiveCategory("anak")}
           >
