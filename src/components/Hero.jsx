@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import hero from "../assets/Cat.jpeg";
 import img1 from "../assets/catalog.png";
-import img2 from "../assets/pendek.png";
-import img3 from "../assets/panjang.png";
 import { useContext } from "react";
 import { StoreContext } from "../StoreContext";
 

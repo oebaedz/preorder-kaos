@@ -3,12 +3,17 @@ import Card from "./Card";
 import OrdererInfo from "./OrdererInfo";
 import Summary from "./Summary";
 import Hero from "./Hero";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { StoreContext } from "../StoreContext";
+import kids_product from "../assets/kids";
 
 const Contain = () => {
   const { items, checkoutRef, listRef } = useContext(StoreContext);
-  const listSect = useRef(null)
+  const [activeCategory, setActiveCategory] = useState("umum"); // default to data_product
+
+  const getActiveProducts = () => {
+    return activeCategory === "umum" ? data_product : kids_product;
+  };
 
   return (
     <div className="px-6 md:px-[138px] bg-base-200">
@@ -16,8 +21,30 @@ const Contain = () => {
 
       <section ref={listRef} className="flex flex-col gap-4 my-10 pt-12">
         <h3 className="font-medium text-3xl mb-6">Daftar Produk</h3>
+
+        {/* Toggle Buttons */}
+        <div className="flex gap-4 mb-6">
+          <button
+            className={`px-4 py-2 rounded-lg font-semibold ${
+              activeCategory === "umum" ? "bg-accent" : "bg-gray-200"
+            }`}
+            onClick={() => setActiveCategory("umum")}
+          >
+            Kaos Dewasa
+          </button>
+          <button
+            className={`px-4 py-2 rounded-lg font-semibold ${
+              activeCategory === "anak" ? "bg-accent" : "bg-gray-200"
+            }`}
+            onClick={() => setActiveCategory("anak")}
+          >
+            Kaos Anak
+          </button>
+        </div>
+
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap justify-center gap-2 md:gap-8">
-          {data_product.map((product) => {
+          {getActiveProducts().map((product) => {
             return (
               <div key={product.id}>
                 <Card product={product} />

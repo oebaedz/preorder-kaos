@@ -5,7 +5,7 @@ import p2_img from "./panjang.jpg";
 let data_product = [
   {
     id: 2,
-    name: "Lengan Pendek S",
+    name: "Kaos Dewasa Pendek S",
     size: "S",
     image: p1_img,
     desc: "Lebar 45 cm",
@@ -14,7 +14,7 @@ let data_product = [
   },
   {
     id: 9,
-    name: "Lengan Panjang S",
+    name: "Kaos Dewasa Panjang S",
     size: "S",
     image: p2_img,
     desc: "Lebar 45 cm",
@@ -23,7 +23,7 @@ let data_product = [
   },
   {
     id: 3,
-    name: "Lengan Pendek M",
+    name: "Kaos Dewasa Pendek M",
     size: "M",
     image: p1_img,
     desc: "Lebar 48 cm",
@@ -32,7 +32,7 @@ let data_product = [
   },
   {
     id: 10,
-    name: "Lengan Panjang M",
+    name: "Kaos Dewasa Panjang M",
     size: "M",
     image: p2_img,
     desc: "Lebar 48 cm",
@@ -41,7 +41,7 @@ let data_product = [
   },
   {
     id: 4,
-    name: "Lengan Pendek L",
+    name: "Kaos Dewasa Pendek L",
     size: "L",
     image: p1_img,
     desc: "Lebar 51 cm",
@@ -50,7 +50,7 @@ let data_product = [
   },
   {
     id: 11,
-    name: "Lengan Panjang L",
+    name: "Kaos Dewasa Panjang L",
     size: "L",
     image: p2_img,
     desc: "Lebar 51 cm",
@@ -59,7 +59,7 @@ let data_product = [
   },
   {
     id: 5,
-    name: "Lengan Pendek XL",
+    name: "Kaos Dewasa Pendek XL",
     size: "XL",
     image: p1_img,
     desc: "Lebar 54 cm",
@@ -68,7 +68,7 @@ let data_product = [
   },
   {
     id: 12,
-    name: "Lengan Panjang XL",
+    name: "Kaos Dewasa Panjang XL",
     size: "XL",
     image: p2_img,
     desc: "Lebar 54 cm",
@@ -77,7 +77,7 @@ let data_product = [
   },
   {
     id: 6,
-    name: "Lengan Pendek 2XL",
+    name: "Kaos Dewasa Pendek 2XL",
     size: "2XL",
     image: p1_img,
     desc: "Lebar 58 cm",
@@ -86,7 +86,7 @@ let data_product = [
   },
   {
     id: 13,
-    name: "Lengan Panjang 2XL",
+    name: "Kaos Dewasa Panjang 2XL",
     size: "2XL",
     image: p2_img,
     desc: "Lebar 58 cm",
