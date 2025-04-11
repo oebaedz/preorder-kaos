@@ -11,6 +11,8 @@ const OrdererInfo = () => {
   const [warn, setWarn] = useState(false);
   const [succ, setSucc] = useState(false);
   const [alert, setAlert] = useState("");
+  const [noHPWarning, setNoHPWarning] = useState(false);
+
 
   const total = items.reduce((price, item) => price + item.qty * item.price, 0);
   const diorder = items.reduce(
@@ -159,24 +161,44 @@ const OrdererInfo = () => {
               name="nama"
             />
           </label>
+          
           <label className="form-control w-full">
-            <div className="label">
-              <p className="label-text text-lg font-medium">
-                No. HP / WhatsApp
-              </p>
-            </div>
-            <input
-              type="text"
-              placeholder="Masukkan nomor HP"
-              className="input input-bordered w-full "
-              onChange={(e) => setNoHP(e.target.value)}
-              value={noHP}
-              name="noHP"
-            />
-            <p className="font-light text-sm ml-1 pt-2">
-              No. HP diawali dengan angka 62
-            </p>
-          </label>
+  <div className="label">
+    <p className="label-text text-lg font-medium">No. HP / WhatsApp</p>
+  </div>
+  <div className="flex w-full">
+    <span className="flex items-center px-3 border border-gray-300 bg-gray-100 rounded-l-md text-sm">
+      +62
+    </span>
+    <input
+      type="text"
+      placeholder="812xxxxxxx"
+      className="input input-bordered w-full rounded-l-none"
+      onChange={(e) => {
+        let val = e.target.value.replace(/\D/g, "");
+        if (val.startsWith("0")) {
+          setNoHPWarning(true);
+          val = val.slice(1);
+        } else {
+          setNoHPWarning(false);
+        }
+        if (val.length <= 13) {
+          setNoHP(val);
+        }
+      }}
+      value={noHP}
+      name="noHP"
+    />
+  </div>
+  {noHPWarning && (
+    <p className="text-sm text-red-600 mt-1">
+      Awalan "0" otomatis dihapus. Gunakan format tanpa 0, contoh: 812xxxxxxx
+    </p>
+  )}
+</label>
+
+
+
           <label className="form-control w-full ">
             <div className="label">
               <span className="label-text text-lg font-medium">Alamat</span>
