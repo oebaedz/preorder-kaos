@@ -167,7 +167,7 @@ const OrdererInfo = () => {
     <p className="label-text text-lg font-medium">No. HP / WhatsApp</p>
   </div>
   <div className="flex w-full">
-    <span className="flex items-center px-3 border border-gray-300 bg-gray-100 rounded-l-md text-sm">
+    <span className="flex items-center px-3 border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 rounded-l-md text-sm">
       +62
     </span>
     <input
