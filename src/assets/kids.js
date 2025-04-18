@@ -12,15 +12,6 @@ let kids_product = [
     price: 45000,
   },
   {
-    id: 52,
-    name: "Kaos Anak Panjang XS",
-    size: "XS",
-    image: p2_img,
-    desc: "L:33 cm P:45 cm",
-    subt: "2-3 tahun",
-    price: 50000,
-  },
-  {
     id: 53,
     name: "Kaos Anak Pendek S",
     size: "S",
@@ -28,15 +19,6 @@ let kids_product = [
     desc: "L:35 cm P:47 cm",
     subt: "4-5 tahun",
     price: 45000,
-  },
-  {
-    id: 54,
-    name: "Kaos Anak Panjang S",
-    size: "S",
-    image: p2_img,
-    desc: "L:35 cm P:47 cm",
-    subt: "4-5 tahun",
-    price: 50000,
   },
   {
     id: 55,
@@ -48,15 +30,6 @@ let kids_product = [
     price: 45000,
   },
   {
-    id: 56,
-    name: "Kaos Anak Panjang M",
-    size: "M",
-    image: p2_img,
-    desc: "L:37 cm P:49 cm",
-    subt: "6-7 tahun",
-    price: 50000,
-  },
-  {
     id: 57,
     name: "Kaos Anak Pendek L",
     size: "L",
@@ -64,15 +37,6 @@ let kids_product = [
     desc: "L:39 cm P:51 cm",
     subt: "8-9 tahun",
     price: 45000,
-  },
-  {
-    id: 58,
-    name: "Kaos Anak Panjang L",
-    size: "L",
-    image: p2_img,
-    desc: "L:39 cm P:51 cm",
-    subt: "8-9 tahun",
-    price: 50000,
   },
   {
     id: 59,
@@ -84,15 +48,6 @@ let kids_product = [
     price: 50000,
   },
   {
-    id: 60,
-    name: "Kaos Anak Panjang XL",
-    size: "XL",
-    image: p2_img,
-    desc: "L:41 cm P:53 cm",
-    subt: "10-11 tahun",
-    price: 55000,
-  },
-  {
     id: 61,
     name: "Kaos Anak Pendek XXL",
     size: "XXL",
@@ -100,15 +55,6 @@ let kids_product = [
     desc: "L:43 cm P:63 cm",
     subt: "12-16 tahun",
     price: 50000,
-  },
-  {
-    id: 62,
-    name: "Kaos Anak Panjang XXL",
-    size: "XXL",
-    image: p2_img,
-    desc: "L:43 cm P:63 cm",
-    subt: "12-16 tahun",
-    price: 55000,
   },
 ];
 
